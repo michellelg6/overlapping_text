@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+	<style>
+	 .par{
+	 position:absolute;
+	 text-align:center;
+	 top:0;
+	 left:50%;
+	 font-size: 45px;
+	 transform:translateX(-50%);
+	 white-space: nowrap;
+	 }
+	 
+	 .halfSize{
+	  transform: translateX(57.5%);
+	  transition: all 1s ease-out;
+	 }
+	 
+	 .eigthSize{
+	  transform: translateX(12.5%);
+	  transition: all 1s ease-out;
+	 }
+	 #curtain{
+	 background: #fff;
+	 font-weight: bolder;
+	 border: 0px;
+	 overflow: hidden;
+	}
+	
+	</style>
+</head>
+<body>
+	<div id = "container">
+   <div class = "par" id = "sub">
+   <p id = "unbold">
+	The pink line<br>
+	Journeys<br>
+	Across The<br>
+	World's Clear<br>
+	Frontier <br>
+   </p>
+   </div>
+   <div  class = "par" id = "curtain">
+   <p id = "bold">
+	The pink line<br>
+	Journeys<br>
+	Across The<br>
+	World's Clear<br>
+	Frontier <br>
+   </p>
+   </div>
+   <script>
+	  $(function(){
+	    $('#curtain').click(function(){
+	    $('#curtain p').addClass('halfSize');
+		$('#sub').addClass('eigthSize');
+	    /**/
+	   });
+	  });
+	</script>
+</body>
+</html>
