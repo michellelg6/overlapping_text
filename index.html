@@ -62,10 +62,22 @@
    <script>
 	  $(function(){
 	    $('#curtain').click(function(){
-	    $('#curtain p').toggleClass('halfSize');
-		$('#sub').toggleClass('eigthSize');
+	    $('#curtain p').addClass('halfSize');
+		$('#sub').addClass('eigthSize');
 	    /**/
+		
+		  $('.halfSize').click(function(){
+			  $(this).css({'transform': 'translateX(-0.5%)', 'transition': 'all 1s ease-out'});
+		      $('.eigthSize').css({'transform': 'translateX(-45%)', 'transition': 'all 1s ease-out'});
+			  
+			  $(this).removeClass('halfSize');
+			  $('.eigthSize').removeClass('eigthSize');
+	       }); 
+		   
+		   
 	   });
+	   
+	  
 	  });
 	</script>
 </body>
