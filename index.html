@@ -7,6 +7,11 @@
 	<title>Document</title>
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 	<style>
+
+        /*Code for both the bold
+        and unbold paragraphs: to
+        align them both to the middle*/
+
 	 .par{
 	 position:absolute;
 	 text-align:center;
@@ -18,15 +23,24 @@
 	 
 	 }
 	 
+       /*Class to add to make the top paragraph move
+        to the write, smoothly and slowly */
 	 .halfSize{
 	  transform: translateX(57.5%);
 	  transition: all 1s ease-out;
 	 }
 	 
+         /*Class to make the bottom paragraph
+         start exposing itself to the right when
+         the top paragraph moves */
 	 .eigthSize{
 	  transform: translateX(12.5%);
 	  transition: all 1s ease-out;
 	 }
+
+         /*For the text not to show
+         from behind when the effect is not running
+         and to create the pink line */
 	 #curtain{
 	 background: #fff;
 	 font-weight: bolder;
@@ -40,7 +54,11 @@
 	</style>
 </head>
 <body>
+       <!--The container to hold all the
+       paragraphs-->
 	<div id = "container">
+
+    <!--The div to hold the unbold paragraph-->
    <div class = "par" id = "sub">
    <p id = "unbold">
 	The pink line<br>
@@ -50,6 +68,9 @@
 	Frontier <br>
    </p>
    </div>
+
+   <!--The div to hold the bold paragraph,
+   which includes the pink line-->
    <div  class = "par" id = "curtain">
    <p id = "bold">
 	The pink line<br>
@@ -60,13 +81,22 @@
    </p>
    </div>
    <script>
+            
 	  $(function(){
+           /*When the top paragraph gets clicked...*/
 	    $('#curtain').click(function(){
+             /*.....and the property to move
+             the top paragraph right...*/
 	    $('#curtain p').addClass('halfSize');
-		$('#sub').addClass('eigthSize');
-	    /**/
-		
-		  $('.halfSize').click(function(){
+             /*.... and add the property to the unbold paragraph to expose half of it
+             after it moves to the right at the same time....*/
+            $('#sub').addClass('eigthSize');
+	   
+             /*......and after the paragraph gets clicked again....*/
+             $('.halfSize').click(function(){
+                     /*....reverse both of the movements enough to cover
+                     the distance needed for the bold to cover the unbold
+                     again.....*/
 			  $(this).css({'transform': 'translateX(-0.5%)', 'transition': 'all 1s ease-out'});
 		      $('.eigthSize').css({'transform': 'translateX(-45%)', 'transition': 'all 1s ease-out'});
 			  
